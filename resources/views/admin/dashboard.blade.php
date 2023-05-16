@@ -10,11 +10,10 @@
                 <div class="card-body">
                     @if (session('status'))
                     <div class="alert alert-success" role="alert">
-                        {{ session('status') }}
                     </div>
                     @endif
-
-                    {{ __('You are logged in!') }}
+                    
+                    <a href="{{ route('projects.index') }}">Projects Catalogue</a>
                 </div>
             </div>
         </div>

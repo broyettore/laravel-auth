@@ -24,7 +24,13 @@ class StoreProjectRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            "name" => "required|max:60",
+            "description" => "required",
+            "client" => "required",
+            "start" => "required",
+            "end" => "required",
+            "progress_status" => "required",
+            "slug" => "required|max:60",
         ];
     }
 }

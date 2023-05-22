@@ -30,7 +30,8 @@ class StoreProjectRequest extends FormRequest
             "start" => "required",
             "end" => "required",
             "progress_status" => "required",
-            "slug" => "required|max:60",
+            "slug" => "nullable",
+            "image" => "nullable|image"
         ];
     }
 }

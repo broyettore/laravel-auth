@@ -2,7 +2,11 @@
 
 @section('content')
 <div class="container py-4">
+    @include('partials.message')
     <h2 class="mb-3">Project: {{ $project->name }}</h2>
+    <div class="project-img mb-3">
+        <img src=" {{ asset("storage/" . $project->image) }}" alt="{{ $project->name }}">
+    </div>
     <div class="project_content mb-3">
         <ul class="list-group">
             <li class="list-group-item">Description :{{ $project->description }}</li>

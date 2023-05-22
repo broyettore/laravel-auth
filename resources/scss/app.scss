@@ -3,3 +3,13 @@
 a {
     text-decoration: none;
 }
+
+.project-img,
+.preview {
+    height: 400px;
+
+    img {
+        height: 100%;
+    }
+}
+

@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container py-4">
-    <form action="{{ route('admin.projects.store') }}" method="POST">
+    <form action="{{ route('admin.projects.store') }}" method="POST" enctype="multipart/form-data" class="form-input-image">
     @csrf
 
     <div class="mb-3">
@@ -30,22 +30,21 @@
         <input type="text" class="form-control" id="progress_status" name="progress_status" value="{{ old('progress_status') }}">
     </div>
     <div class="mb-3">
-        <label for="slug" class="form-label">Slug</label>
-        <input type="text" class="form-control" id="slug" name="slug" value="{{ old('slug') }}">
+
+        <!-- Img Preview -->
+        <div class="preview">
+            <img id="file-image-preview">
+        </div>
+         <!-- /Img Preview -->
+
+        <label for="image" class="form-label">Image</label>
+        <input class="form-control" type="file" id="image" name="image">
     </div>
     <div class="mb-3">
         <input type="submit" value="submit" class="btn btn-primary">
     </div>
     </form>
-    @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
+    @include('partials.errors')
 <button type="button" class="btn btn-primary mb-3">
     <a href="{{ route("admin.projects.index") }}" class="text-light">Back to Menu</a>
 </button>

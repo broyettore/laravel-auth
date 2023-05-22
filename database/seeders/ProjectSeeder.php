@@ -27,7 +27,7 @@ class ProjectSeeder extends Seeder
             $newProject->start = $faker->dateTimeBetween('-5 months', '-3 months');
             $newProject->end = $faker->dateTimeBetween('-1 month', '-3 days');
             $newProject->progress_status = $faker->randomElement(["Done", "On going"]);
-            $newProject->slug = Str::slug($faker->sentence(3), '-');
+            $newProject->slug = Str::slug($newProject->name, '-');
             $newProject->save();
         }
     }

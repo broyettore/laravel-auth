@@ -3,7 +3,7 @@
 @section('content')
 <div class="container py-4">
     <h2 class="mb-3">Project: {{ $project->name }}</h2>
-    <div class="project_content">
+    <div class="project_content mb-3">
         <ul class="list-group">
             <li class="list-group-item">Description :{{ $project->description }}</li>
             <li class="list-group-item">Client : {{ $project->client }}</li>
@@ -12,5 +12,8 @@
             <li class="list-group-item">Progress: {{ $project->progress_status }}</li>
           </ul>
     </div>
+    <button type="button" class="btn btn-primary mb-3">
+        <a href="{{ route("admin.projects.index") }}" class="text-light">Back to Menu</a>
+    </button>
 </div>
 @endsection

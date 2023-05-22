@@ -13,7 +13,7 @@
                     </div>
                     @endif
                     
-                    <a href="{{ route('projects.index') }}">Projects Catalogue</a>
+                    <a href="{{ route('admin.projects.index') }}">Projects Catalogue</a>
                 </div>
             </div>
         </div>

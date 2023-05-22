@@ -45,7 +45,7 @@ class ProjectController extends Controller
         $newProject->fill($data);
         $newProject->save();
 
-        return to_route("projects.show", $newProject->id);
+        return to_route("admin.projects.show", $newProject->id);
     }
 
     /**
@@ -84,7 +84,7 @@ class ProjectController extends Controller
         $data = request()->all();
         $project->update($data);
 
-        return  to_route("projects.index");
+        return  to_route("admin.projects.index");
     }
 
     /**
@@ -96,6 +96,6 @@ class ProjectController extends Controller
     public function destroy(Project $project)
     {
         $project->delete();
-        return  to_route("projects.index");
+        return  to_route("admin.projects.index");
     }
 }

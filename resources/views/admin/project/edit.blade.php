@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container py-4">
-    <form action="{{ route("projects.update", $project->id) }}" method="POST">
+    <form action="{{ route("admin.projects.update", $project->id) }}" method="POST">
     @csrf
     @method("PUT")
 
@@ -48,7 +48,7 @@
     </div>
 @endif
 <button type="button" class="btn btn-primary mb-3">
-    <a href="{{ route("projects.index") }}" class="text-light">Torna al menu principale</a>
+    <a href="{{ route("admin.projects.index") }}" class="text-light">Back to Menu</a>
 </button>
 </div>
 @endsection

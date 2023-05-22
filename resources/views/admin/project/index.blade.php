@@ -3,7 +3,7 @@
 @section('content')
 <div class="container py-4">
   <div class="mb-3">
-    <a href="{{ route("projects.create") }}" class="btn btn-primary text-light">
+    <a href="{{ route("admin.projects.create") }}" class="btn btn-primary text-light">
       Add a Project
     </a>
   </div>
@@ -22,11 +22,7 @@
             <tbody>
                 @foreach ($projects as $project)
               <tr>
-                <th scope="row">
-                    <a href="{{ route("projects.show", $project->id)}}">
-                        {{ $project->name }}
-                    </a>
-                </th>
+                <th scope="row">{{ $project->name }}</th>
                 <td>{{ $project->description }}</td>
                 <td>{{ $project->client }}</td>
                 <td>{{ $project->start }}</td>
@@ -34,10 +30,13 @@
                 <td>{{ $project->progress_status }}</td>
                 <td>
                   <div class="d-flex">
-                      <a href="{{ route("projects.edit", $project->id)}}" class="btn btn-primary me-1">
+                    <a href="{{ route("admin.projects.show", $project->id)}}" class="btn btn-primary me-1">
+                      Show
+                      </a>
+                      <a href="{{ route("admin.projects.edit", $project->id)}}" class="btn btn-secondary me-1">
                         <i class="fa-solid fa-pen text-light"></i>
                       </a>
-                      <form action="{{ route('projects.destroy', $project->id) }}" method="POST">
+                      <form action="{{ route('admin.projects.destroy', $project->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
 

@@ -90,14 +90,6 @@ class ProjectController extends Controller
         $data = $request->validated();
         $project->slug = Str::slug($data["name"]);
 
-        if(empty($data['set_image'])){
-
-            if($project->image){
-                Storage::delete($project->image);
-                $project->image = null;
-            }
-
-        } else {
             if (isset($data['image'])) {
 
                 if($project->image){
@@ -106,7 +98,6 @@ class ProjectController extends Controller
 
                 $project->image = Storage::put('uploads', $data['image']);
             }
-        }
 
         $project->update($data);
 
